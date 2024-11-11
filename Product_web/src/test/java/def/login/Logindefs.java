@@ -1,13 +1,13 @@
-package def;
+package def.login;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
-import steps.LoginSteps;
+import steps.login.LoginSteps;
 
-import static pages.LoginPage.*;
+import static pages.login.LoginPage.*;
 
 public class Logindefs {
 
@@ -32,9 +32,5 @@ public class Logindefs {
 
     @Then("I should be taken to the Dashboard page")
     public void iShouldBeTakenToTheDashboardPage() {
-    }
-
-    @And("I should see the {string} menu")
-    public void iShouldSeeTheMenu(String arg0) {
     }
 }

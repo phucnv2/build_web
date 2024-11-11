@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
     features = "src/test/resources/features",
     glue = "def",
     plugin = {"json:target/cucumber.json"},
-    tags = "@Phuc"
+    tags = "@Add1itemtocartsuccess"
 )
 @Test
 public class RunCucumberTests extends AbstractTestNGCucumberTests {

@@ -86,6 +86,12 @@ public class BasePage{
         String text = DriverManager.getDriver().findElement(by).getText();
         return text;
     }
+//    public Boolean checkTextMatching(By by, String text){
+//        waitForElementVisible(by);
+//        String texta = DriverManager.getDriver().findElement(by).getText();
+//        Assert.assertEquals(texta,"Phuc","Error!");
+//        return true;
+//    }
 
     public WebElement highLightElement(By by) {
         // Tô màu border ngoài chính element chỉ định - màu đỏ (có thể đổi màu khác)

@@ -8,4 +8,3 @@ Feature: Login to CRM
     When I enter my username and password
     And I click the Login button
     Then I should be taken to the Dashboard page
-    And I should see the "Customers" menu

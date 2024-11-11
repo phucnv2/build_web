@@ -1,8 +1,8 @@
-package steps;
+package steps.login;
 
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.annotations.Steps;
-import pages.LoginPage;
+import pages.login.LoginPage;
 
 public class LoginSteps {
     //các step phải làm xong đưa qua cái defs

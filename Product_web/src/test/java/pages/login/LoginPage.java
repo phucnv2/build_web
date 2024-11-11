@@ -1,4 +1,4 @@
-package pages;
+package pages.login;
 
 import common.BasePage;
 import net.serenitybdd.annotations.Step;
