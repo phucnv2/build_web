@@ -21,9 +21,11 @@ public class Productdefs {
 
     @And("I checkout product success")
     public void iCheckoutProductSuccess() {
+        productSteps.clickBtnCheckOut();
     }
 
     @Then("Verify checkout success")
     public void verifyCheckoutSuccess() {
+        productSteps.verifyCheckOutSuccess();
     }
 }

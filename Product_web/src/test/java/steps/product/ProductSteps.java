@@ -18,4 +18,14 @@ public class ProductSteps {
         productPage.clickBtnShoppingCart();
         productPage.verifyAddProductSuccess();
     }
+
+    @Step("I checkout product success")
+    public void clickBtnCheckOut() {
+        productPage.clickBtnCheckOut();
+    }
+
+    @Step("Verify checkout success")
+    public void verifyCheckOutSuccess() {
+        productPage.verifyCheckOutSuccess();
+    }
 }
