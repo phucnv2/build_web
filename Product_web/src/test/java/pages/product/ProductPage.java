@@ -19,6 +19,10 @@ public class ProductPage extends BasePage {
     public static By buttonBackHome = By.xpath("//button[@id='back-to-products']");
     public static By buttonFinish = By.xpath("//button[@id='finish']");
 
+    //div[@class='inventory_item_name '] -- Tiêu đề
+    //div[@class='inventory_item_price'] -- Giá ở product
+    //button[@class='btn btn_primary btn_small btn_inventory '] -- all add to cart
+
     @Step
     public void clickBtnAddToCart() {
         clickElement(buttonAddToCart);

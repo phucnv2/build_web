@@ -9,10 +9,9 @@ Feature: I want to add product
     And I view shop card
     And I checkout product success
     Then Verify checkout success
-
-#    Scenario: View detail product
-#      Given I am on the login page
-#      When I enter my username and password
-#      And I click the Login button
-#      And I click view detail product
-#      And I add product success
+@GetTitleProduct
+    Scenario: View detail product
+      Given I am on the login page
+      When I enter my username and password
+      And I click the Login button
+      And I want to get title all product
