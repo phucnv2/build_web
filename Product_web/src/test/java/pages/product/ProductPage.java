@@ -18,10 +18,10 @@ public class ProductPage extends BasePage {
     public static By titleThanksOrder = By.xpath("//h2[normalize-space()='Thank you for your order!']");
     public static By buttonBackHome = By.xpath("//button[@id='back-to-products']");
     public static By buttonFinish = By.xpath("//button[@id='finish']");
-
-    //div[@class='inventory_item_name '] -- Tiêu đề
-    //div[@class='inventory_item_price'] -- Giá ở product
-    //button[@class='btn btn_primary btn_small btn_inventory '] -- all add to cart
+    public static By amountProduct = By.xpath("//div[@class='inventory_item_price']");
+    public static By amountCartProduct = By.xpath("//div[@class='inventory_item_price']");
+    public static By amountTax = By.xpath("//div[@class='summary_tax_label']");
+    public static By amountTotal = By.xpath("//div[@class='summary_total_label']");
 
     @Step
     public void clickBtnAddToCart() {
@@ -35,7 +35,6 @@ public class ProductPage extends BasePage {
 
     @Step
     public void verifyAddProductSuccess() {
-        System.out.println("Gia tri ben ngoai la: " + getElementText(nameItemProduct1st) + " Gia tri trong gio hang la: " + getElementText(nameItemShoppingCart));
         Assert.assertEquals(getElementText(nameItemProduct1st), getElementText(nameItemShoppingCart), "Fail!");
     }
 
@@ -46,12 +45,13 @@ public class ProductPage extends BasePage {
         setText(inputLastName, "LastName");
         setText(inputZip, "10000");
         clickElement(buttonContinue);
+        Assert.assertEquals(splitNumber(amountCartProduct,1), splitNumber(amountProduct,1), "Fail! Amount not match"); // check tiền ở đây
+        Assert.assertEquals(totalNumber(splitNumber(amountTax,6), splitNumber(amountCartProduct,1)), splitNumber(amountTotal,8), "Fail! Amount not match"); // check tổng tiền ở đây
     }
 
     @Step
     public void verifyCheckOutSuccess() {
         clickElement(buttonFinish);
-        System.out.println("Tieu de check out thanh cong "+ getElementText(titleThanksOrder));
         Assert.assertEquals(getElementText(titleThanksOrder), "Thank you for your order!", "Fail!");
         clickElement(buttonBackHome);
     }

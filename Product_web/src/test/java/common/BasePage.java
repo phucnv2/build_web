@@ -75,6 +75,18 @@ public class BasePage{
         highLightElement(by);
         getWebElement(by).click();
     }
+    public Double splitNumber(By by, int n){
+        String chuoi = getElementText(by);
+        // Tách chuỗi bắt đầu từ vị trí 7 (kể từ 0)
+        String chuoiCon = chuoi.substring(n);
+        Double soThuc = Double.valueOf(chuoiCon);
+        return soThuc;
+    }
+
+    public Double totalNumber(Double number,Double number1){
+        Double total = number + number1;
+        return total;
+    }
 
     public boolean getCurrentUrl(String textUrl) {
         boolean text = DriverManager.getDriver().getCurrentUrl().contains(textUrl);
@@ -86,12 +98,6 @@ public class BasePage{
         String text = DriverManager.getDriver().findElement(by).getText();
         return text;
     }
-//    public Boolean checkTextMatching(By by, String text){
-//        waitForElementVisible(by);
-//        String texta = DriverManager.getDriver().findElement(by).getText();
-//        Assert.assertEquals(texta,"Phuc","Error!");
-//        return true;
-//    }
 
     public WebElement highLightElement(By by) {
         // Tô màu border ngoài chính element chỉ định - màu đỏ (có thể đổi màu khác)
